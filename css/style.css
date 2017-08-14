@@ -1,0 +1,17 @@
+div.auto {
+	width: 587px;
+	height: 198px;
+	overflow: auto;
+}
+div.scroll {
+	width: 100%;
+	height: 450px;
+	overflow: auto;
+}
+hr{
+	height:1px;
+	background-color:#949494;
+}
+.fundo{
+	background-color:#eee;
+}
