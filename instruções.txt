@@ -1,0 +1,8 @@
+Instruções:
+
+1- Faça o commit do projeto na pasta do localhost;
+2- Importe o banco de dados(sql/basedesafio.sql);
+3- Verificar arquivo conexao.php, se estiver usando linux substituir a linha:
+	"$conexao = mysqli_connect("localhost", "root", "", "basedesafio");" por
+	"$conexao = mysqli_connect("localhost", "root", "root", "basedesafio");";
+4- O projeto está pronto para execução.
