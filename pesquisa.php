@@ -25,7 +25,7 @@
 
 	<body class='fundo'>
 		<?php
-		require('conexao.php');
+		require('processa/conexao.php');
 		$pesquisa = $_GET['pesquisa'];
 		echo"
 		

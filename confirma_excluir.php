@@ -16,7 +16,7 @@
 
 	<body class='fundo'>
 		<?php
-		require('conexao.php');
+		require('processa/conexao.php');
 		$idempresas = $_GET['idempresas'];
 		$pesquisa_empresas = "SELECT nomefantasia FROM empresas WHERE idempresas = '$idempresas';";
 		$executa_pesquisa_empresas = mysqli_query($conexao, $pesquisa_empresas);
@@ -41,7 +41,7 @@
 					<div class='col-md-2'>
 					</div>
 					<div class='col-md-5'>
-						<a href='processa_excluir.php?idempresas=$idempresas'><button type='button' class='btn btn-success'><h3>Sim!</h3></button></a>
+						<a href='processa/excluir_empresa.php?idempresas=$idempresas'><button type='button' class='btn btn-success'><h3>Sim!</h3></button></a>
 					</div>
 					<div class='col-md-3'>
 						<a href='index.php'><button type='button' class='btn btn-danger'><h3>Não!</h3></button></a>

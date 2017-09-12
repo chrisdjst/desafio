@@ -4,7 +4,7 @@
 		<title>sem título</title>
 		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 		<?php
-			require('conexao.php');
+			require('processa/conexao.php');
 		?>
 		<title>Página Inicial</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -51,7 +51,7 @@
 					<div class='col-md-4'>
 					</div>
 				</div>
-				<form id='form' action='processa_alterar_empresa.php?idempresas=$idempresas' method='POST' enctype='multipart/form-data' autocomplete='on'>															
+				<form id='form' action='processa/alterar_empresa.php?idempresas=$idempresas' method='POST' enctype='multipart/form-data' autocomplete='on'>															
 					<div class='row '>
 						<div class='col-md-2'>
 						</div>

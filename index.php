@@ -1,7 +1,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
 		<?php
-			require('conexao.php');
+			require('processa/conexao.php');
 		?>
 		<title>Página Inicial</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -37,7 +37,7 @@
 	<body class='fundo'>
 		<div class='container-fluid'>
 			<div class='row'>
-				<form action='processa_cadastro.php' method='POST' autocomplete='on'>
+				<form action='processa/cadastro_empresa.php' method='POST' autocomplete='on'>
 					<div class='col-md-2'>
 					</div>
 					<div class='col-md-8'>
@@ -118,96 +118,6 @@
 								<button type='submit' class='btn btn-primary'>Cadastrar</button>
 							</div>
 							<div class='col-md-9'>
-								<?php
-									if(isset($_GET["cod"])){
-										$cod = $_GET["cod"];
-										switch ($cod) {
-										case 1:
-											echo"
-											<br/>
-											<div class='col-md-12'>
-												<a class='btn btn-success'  data-toggle='collapse' href='#cod1' aria-expanded='false' aria-controls='cod1'>
-													Aviso!
-												</a>
-											</div>
-											<div class='col-md-12 collapse' id='cod1'>
-												<div class='alert alert-success' role='alert' > <span class='glyphicon glyphicon-remove' aria-hidden='true'></span> <strong>Salvo!</strong> Cadastro salvo com sucesso! </div>
-											</div>";
-											break;
-										case 2:
-											echo"
-											<br/>
-											<div class='col-md-12'>
-												<a class='btn btn-danger'  data-toggle='collapse' href='#cod2' aria-expanded='false' aria-controls='cod2'>
-													Aviso!
-												</a>
-											</div>
-											<div class='col-md-12 collapse' id='cod2'>
-												<div class='alert alert-danger' role='alert' id='avisos'> <span class='glyphicon glyphicon-remove' aria-hidden='true'></span> <strong>Erro!</strong> Razão social já cadastrada! </div>
-											</div>";
-											break;
-										case 3:
-											echo"
-											<br/>
-											<div class='col-md-12'>
-												<a class='btn btn-danger'  data-toggle='collapse' href='#cod3' aria-expanded='false' aria-controls='cod3'>
-													Aviso!
-												</a>
-											</div>
-											<div class='col-md-12 collapse' id='cod3'>
-												<div class='alert alert-danger' role='alert' id='avisos'> <span class='glyphicon glyphicon-remove' aria-hidden='true'></span> <strong>Erro!</strong> Nome fantasia já cadastrado! </div>
-											</div>";
-											break;
-										case 4:
-											echo"
-											<br/>
-											<div class='col-md-12'>
-												<a class='btn btn-danger'  data-toggle='collapse' href='#cod4' aria-expanded='false' aria-controls='cod4'>
-													Aviso!
-												</a>
-											</div>
-											<div class='col-md-12 collapse' id='cod4'>
-												<div class='alert alert-danger' role='alert' id='avisos'> <span class='glyphicon glyphicon-remove' aria-hidden='true'></span> <strong>Erro!</strong> CNPJ já cadastrado! </div>
-											</div>";
-											break;
-										case 5:
-											echo"
-											<br/>
-											<div class='col-md-12'>
-												<a class='btn btn-danger'  data-toggle='collapse' href='#cod5' aria-expanded='false' aria-controls='cod5'>
-													Aviso!
-												</a>
-											</div>
-											<div class='col-md-12 collapse' id='cod5'>
-												<div class='alert alert-danger' role='alert' id='avisos'> <span class='glyphicon glyphicon-remove' aria-hidden='true'></span> <strong>Erro!</strong> Telefone já cadastrado! </div>
-											</div>";
-										case 6:
-											echo"
-											<br/>
-											<div class='col-md-12'>
-												<a class='btn btn-danger'  data-toggle='collapse' href='#cod6' aria-expanded='false' aria-controls='cod6'>
-													Aviso!
-												</a>
-											</div>
-											<div class='col-md-12 collapse' id='cod6'>
-												<div class='alert alert-danger' role='alert' id='avisos'> <span class='glyphicon glyphicon-remove' aria-hidden='true'></span> <strong>Erro!</strong> Não é permitido o uso de caracteres especiais no nome fantasia!</div>
-											</div>";
-											break;
-										case 7:
-											echo"
-											<br/>
-											<div class='col-md-12'>
-												<a class='btn btn-danger'  data-toggle='collapse' href='#cod7' aria-expanded='false' aria-controls='cod7'>
-													Aviso!
-												</a>
-											</div>
-											<div class='col-md-12 collapse' id='cod7'>
-												<div class='alert alert-danger' role='alert' id='avisos'> <span class='glyphicon glyphicon-remove' aria-hidden='true'></span> <strong>Erro!</strong> Não é permitido o uso de caracteres especiais na razão social! </div>
-											</div>";
-											break;
-										}
-									}
-								?>
 							</div>
 						</div>
 					</div>
@@ -322,3 +232,66 @@
 		</div>
 	</body>
 </html>
+<?php
+	if(isset($_GET["cod"])){
+		$cod = $_GET["cod"];
+		switch ($cod) {
+		case 1:
+			echo"									
+			<script>
+				alert('Cadastro salvo com sucesso! ')
+				window.location='index.php?cod=0'
+			</script>";
+			break;
+		case 2:
+			echo"
+			<script>
+				alert('Razão social já cadastrada!')
+				window.location='index.php?cod=0'
+			</script>";
+			break;
+		case 3:
+			echo"
+			<script>
+				alert('<Nome fantasia já cadastrado!')
+				window.location='index.php?cod=0'
+			</script>";
+			break;
+		case 4:
+			echo"
+			<script>
+				alert('CNPJ já cadastrado!')
+				window.location='index.php?cod=0'
+			</script>";
+			break;
+		case 5:
+			echo"
+			<script>
+				alert('Telefone já cadastrado!')
+				window.location='index.php?cod=0'
+			</script>";
+			break;
+		case 6:
+			echo"
+			<script>
+				alert('CNPJ inválido!')
+				window.location='index.php?cod=0'
+			</script>";
+			break;
+		case 7:
+			echo"
+			<script>
+				alert('Não é permitido o uso de caracteres especiais no nome fantasia!')
+				window.location='index.php?cod=0'
+			</script>";
+			break;
+		case 8:
+			echo"
+			<script>
+				alert('Não é permitido o uso de caracteres especiais na razão social!')
+				window.location='index.php?cod=0'
+			</script>";
+			break;
+		}
+	}
+?>
